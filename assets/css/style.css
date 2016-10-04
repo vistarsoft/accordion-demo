@@ -1,0 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+strong { 
+    font-weight: 700;
+}
+.container {
+    padding: 20px;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.page-title {
+    font-size: 2.0em;
+    font-weight: 700;
+}
+
+section {
+	max-width: 980px;
+}
+
+.demo {
+    margin: 50px 0;
+}
+
+.section-title {
+	font-size: 1.3em;
+    font-weight: 700;
+}
+
+.panel {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin: 20px 0;
+}
+
+.panel-header {
+    background-color: #ccc;
+    padding: 10px;
+}
+
+.item {
+    padding: 10px;
+    border-bottom: 1px dotted #ddd;
+}
+
+.more {
+    margin: 10px;
+    background-color: #4286f4;
+    padding: 7px 10px;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+}
+
+.more:hover {
+    cursor: pointer;
+    background-color: #2367d3;
+}

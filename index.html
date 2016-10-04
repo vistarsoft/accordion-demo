@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Accordion</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/prism.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css"> </head>
+<style type="text/css">
+.list1 li:nth-child(n+4) {
+    display: none;
+}
+</style>
+
+<body>
+    <div class="container">
+        <h1 class="page-title">Accordion demo</h1>
+        <section class="demo">
+            <h2 class="section-title">1. CSS + JS (No animate)</h2>
+            <div class="panel">
+                <div class="panel-header">List</div>
+                <div class="panel-body">
+                    <ul id="list-1" class="list1">
+                        <li class="item">Simple item #01</li>
+                        <li class="item">Simple item #02</li>
+                        <li class="item">Simple item #03</li>
+                        <li class="item">Simple item #04</li>
+                        <li class="item">Simple item #05</li>
+                        <li class="item">Simple item #06</li>
+                        <li class="item">Simple item #07</li>
+                        <li class="item">Simple item #08</li>
+                        <li class="item">Simple item #09</li>
+                        <li class="item">Simple item #10</li>
+                    </ul>
+                    <button id="btn1" class="more" data-target="list-1">もっと見る</button>
+                </div>
+            </div>
+            <strong>HTML</strong>
+            <pre class="line-numbers"><code class="language-html">&lt;ul id=&quot;list-1&quot; class=&quot;list1&quot;&gt;
+    &lt;li class=&quot;item&quot;&gt;Simple item #01&lt;/li&gt;
+    &lt;li class=&quot;item&quot;&gt;Simple item #02&lt;/li&gt;
+    &lt;li class=&quot;item&quot;&gt;Simple item #03&lt;/li&gt;
+    &lt;li class=&quot;item&quot;&gt;Simple item #04&lt;/li&gt;
+    &lt;li class=&quot;item&quot;&gt;Simple item #05&lt;/li&gt;
+	...
+&lt;/ul&gt;
+&lt;button id=&quot;btn1&quot; class=&quot;more&quot; data-target=&quot;list-1&quot;&gt;Show more&lt;/button&gt;
+...
+&lt;!-- Import accordion.js at the end of body --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;./assets/js/accordion.js&quot;&gt;&lt;/script&gt;</code></pre>
+            <strong>CSS</strong>
+            <pre class="line-numbers"><code class="language-css">.list1 li:nth-child(n+4) {
+	display: none; 
+}</code></pre>
+            <strong>JS</strong>
+            <pre class="line-numbers"><code class="language-js">$("#btn1").accordion();</code></pre>
+        </section>
+        <section class="demo">
+            <h2 class="section-title">2. JS only (No animate)</h2>
+            <div class="panel">
+                <div class="panel-header">List</div>
+                <div class="panel-body">
+                    <ul id="list-2">
+                        <li class="item">Simple item #01</li>
+                        <li class="item">Simple item #02</li>
+                        <li class="item">Simple item #03</li>
+                        <li class="item">Simple item #04</li>
+                        <li class="item">Simple item #05</li>
+                        <li class="item">Simple item #06</li>
+                        <li class="item">Simple item #07</li>
+                        <li class="item">Simple item #08</li>
+                        <li class="item">Simple item #09</li>
+                        <li class="item">Simple item #10</li>
+                    </ul>
+                    <button id="btn2" class="more" data-target="list-2">もっと見る</button>
+                </div>
+            </div>
+            <strong>HTML</strong>
+            <pre class="line-numbers"><code class="language-html">Same as above</code></pre>
+            <strong>JS</strong>
+            <pre class="line-numbers"><code class="language-js">$("#btn1").accordion({
+	hideOnStart: true,
+	initItem: 4 // Show 4 items on start
+});</code></pre>
+        </section>
+        <section class="demo">
+            <h2 class="section-title">3. JS only (With animate)</h2>
+            <div class="panel">
+                <div class="panel-header">List</div>
+                <div class="panel-body">
+                    <ul id="list-3">
+                        <li class="item">Simple item #01</li>
+                        <li class="item">Simple item #02</li>
+                        <li class="item">Simple item #03</li>
+                        <li class="item">Simple item #04</li>
+                        <li class="item">Simple item #05</li>
+                        <li class="item">Simple item #06</li>
+                        <li class="item">Simple item #07</li>
+                        <li class="item">Simple item #08</li>
+                        <li class="item">Simple item #09</li>
+                        <li class="item">Simple item #10</li>
+                    </ul>
+                    <button id="btn3" class="more" data-target="list-3">もっと見る</button>
+                </div>
+            </div>
+            <strong>HTML</strong>
+            <pre class="line-numbers"><code class="language-html">Same as above</code></pre>
+            <strong>JS</strong>
+            <pre class="line-numbers"><code class="language-js">$("#btn1").accordion({
+	hideOnStart: true,
+	initItem: 2, // Show 2 items on start
+	animate: "slide" // or "fade"
+});</code></pre>
+        </section>
+        <section class="demo">
+            <h2 class="section-title">4. JS only (Auto-hide button)</h2>
+            <div class="panel">
+                <div class="panel-header">List</div>
+                <div class="panel-body">
+                    <ul id="list-4">
+                        <li class="item">Simple item #01</li>
+                        <li class="item">Simple item #02</li>
+                        <li class="item">Simple item #03</li>
+                    </ul>
+                    <button id="btn4" class="more" data-target="list-4">もっと見る</button>
+                </div>
+            </div>
+            <strong>HTML</strong>
+            <pre class="line-numbers"><code class="language-html">&lt;ul id=&quot;list-1&quot; class=&quot;list1&quot;&gt;
+    &lt;li class=&quot;item&quot;&gt;Simple item #01&lt;/li&gt;
+    &lt;li class=&quot;item&quot;&gt;Simple item #02&lt;/li&gt;
+    &lt;li class=&quot;item&quot;&gt;Simple item #03&lt;/li&gt;
+&lt;/ul&gt;
+&lt;button id=&quot;btn1&quot; class=&quot;more&quot; data-target=&quot;list-1&quot;&gt;Show more&lt;/button&gt;
+...
+&lt;!-- Import accordion.js at the end of body --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;./assets/js/accordion.js&quot;&gt;&lt;/script&gt;</code></pre>
+            <strong>JS</strong>
+            <pre class="line-numbers"><code class="language-js">$("#btn1").accordion({
+    hideOnStart: true,
+    initItem: 3 // Show 3 items on start
+});</code></pre>
+        </section>
+    </div>
+    <!-- Import accordion.js at the end of body -->
+    <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/js/prism.js"></script>
+    <script type="text/javascript" src="./assets/js/accordion.js"></script>
+    <script type="text/javascript">
+    $("#btn1").accordion();
+    $("#btn2").accordion({
+    	hideOnStart: true,
+    	initItem: 4
+    });
+    $("#btn3").accordion({
+    	hideOnStart: true,
+    	initItem: 2,
+    	animate: "slide"
+    });
+    $("#btn4").accordion({
+        hideOnStart: true,
+        initItem: 3
+    });
+    </script>
+</body>
+
+</html>
